@@ -11,10 +11,10 @@ namespace Eplayers_AspNetCore.Controllers
     {
         Equipe equipeModel = new Equipe();
         
-        [Route("Listar")]
+        // [Route("Listar")]
         public IActionResult index()
         {
-            ViewBag.Equipes = equipeModel.ReadAll();
+            ViewBag.equipes = equipeModel.ReadAll();
             return View();
             
         }
@@ -25,11 +25,41 @@ namespace Eplayers_AspNetCore.Controllers
             Equipe NewEquipe = new Equipe();
             NewEquipe.IdEquipe = Int32.Parse( form["IdEquipe"] );
             NewEquipe.Name = form["Name"];
-            NewEquipe.Image = form["Image"];
+
+            if(form.Files.Count > 0)
+            {
+                var file = form.Files[0];
+                var folder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Equipes");
+
+                if(!Directory.Exists(folder)){
+                    Directory.CreateDirectory(folder);
+                }
+
+                var path = path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/", folder, file.FileName);
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+                }
+                newEquipe.Imagem = file.FileName;
+            }
+            else
+            {
+               newEquipe.Imagem = "padrao.png";
+            }
 
             equipeModel.Create(NewEquipe);
-            ViewBag.Equipes = equipeModel.ReadAll();
-            return LocalRedirect("~/Equipe/Listar");
+
+            ViewBag.equipe = equipeModel.ReadAll();
+            return LocalRedirect ("~/Equipes");
         }
+
+        [Route("Equipe/{id")]
+        public IActionResult Excluir(int id)
+        {
+            equipeModel.Delete(id);
+            ViewBag.Equipes = equipeModel.ReadAll();
+            return LocalRedirect("~/Equipe");
+        }
+        
     }
 }
