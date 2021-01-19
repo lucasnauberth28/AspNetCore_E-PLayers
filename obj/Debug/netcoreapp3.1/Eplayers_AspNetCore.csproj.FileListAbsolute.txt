@@ -72,3 +72,12 @@ C:\Users\fic\Desktop\Lucas Nauberth\AspNetCore_E-PLayers\obj\Debug\netcoreapp3.1
 C:\Users\fic\Desktop\Lucas Nauberth\AspNetCore_E-PLayers\obj\Debug\netcoreapp3.1\Eplayers_AspNetCore.pdb
 C:\Users\fic\Desktop\Lucas Nauberth\AspNetCore_E-PLayers\obj\Debug\netcoreapp3.1\Eplayers_AspNetCore.genruntimeconfig.cache
 C:\Users\fic\Desktop\Lucas Nauberth\AspNetCore_E-PLayers\obj\Debug\netcoreapp3.1\Eplayers_AspNetCore.csproj.CopyComplete
+C:\Users\Saga\Desktop\E-Players Razor\AspNetCore_E-PLayers\obj\Debug\netcoreapp3.1\Eplayers_AspNetCore.csprojAssemblyReference.cache
+C:\Users\Saga\Desktop\E-Players Razor\AspNetCore_E-PLayers\obj\Debug\netcoreapp3.1\Eplayers_AspNetCore.AssemblyInfoInputs.cache
+C:\Users\Saga\Desktop\E-Players Razor\AspNetCore_E-PLayers\obj\Debug\netcoreapp3.1\Eplayers_AspNetCore.AssemblyInfo.cs
+C:\Users\Saga\Desktop\E-Players Razor\AspNetCore_E-PLayers\obj\Debug\netcoreapp3.1\Eplayers_AspNetCore.csproj.CoreCompileInputs.cache
+C:\Users\Saga\Desktop\E-Players Razor\AspNetCore_E-PLayers\obj\Debug\netcoreapp3.1\Eplayers_AspNetCore.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Saga\Desktop\E-Players Razor\AspNetCore_E-PLayers\obj\Debug\netcoreapp3.1\Eplayers_AspNetCore.RazorAssemblyInfo.cache
+C:\Users\Saga\Desktop\E-Players Razor\AspNetCore_E-PLayers\obj\Debug\netcoreapp3.1\Eplayers_AspNetCore.RazorAssemblyInfo.cs
+C:\Users\Saga\Desktop\E-Players Razor\AspNetCore_E-PLayers\obj\Debug\netcoreapp3.1\Eplayers_AspNetCore.dll
+C:\Users\Saga\Desktop\E-Players Razor\AspNetCore_E-PLayers\obj\Debug\netcoreapp3.1\Eplayers_AspNetCore.pdb

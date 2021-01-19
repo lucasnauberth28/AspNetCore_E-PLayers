@@ -1,7 +1,9 @@
 using System;
+using System.IO;
 using Eplayers_AspNetCore.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace Eplayers_AspNetCore.Controllers
 {
@@ -14,7 +16,7 @@ namespace Eplayers_AspNetCore.Controllers
         // [Route("Listar")]
         public IActionResult index()
         {
-            ViewBag.equipes = equipeModel.ReadAll();
+            ViewBag.Equipes = equipeModel.ReadAll();
             return View();
             
         }
@@ -35,16 +37,16 @@ namespace Eplayers_AspNetCore.Controllers
                     Directory.CreateDirectory(folder);
                 }
 
-                var path = path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/", folder, file.FileName);
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/", folder, file.FileName);
                 using (var stream = new FileStream(path, FileMode.Create))
                 {
                     file.CopyTo(stream);
                 }
-                newEquipe.Imagem = file.FileName;
+                NewEquipe.Image = file.FileName;
             }
             else
             {
-               newEquipe.Imagem = "padrao.png";
+               NewEquipe.Image = "padrao.png";
             }
 
             equipeModel.Create(NewEquipe);
@@ -53,12 +55,12 @@ namespace Eplayers_AspNetCore.Controllers
             return LocalRedirect ("~/Equipes");
         }
 
-        [Route("Equipe/{id")]
+        [Route("Equipe/{id}")]
         public IActionResult Excluir(int id)
         {
             equipeModel.Delete(id);
             ViewBag.Equipes = equipeModel.ReadAll();
-            return LocalRedirect("~/Equipe");
+            return LocalRedirect("~/Equipes");
         }
         
     }
